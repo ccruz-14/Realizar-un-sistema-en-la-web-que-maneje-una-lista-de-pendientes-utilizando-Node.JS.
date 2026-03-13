@@ -1,0 +1,50 @@
+<!--
+=============================================
+index.html - Interfaz visual del usuario (Frontend)
+ESTRUCTURA de la página web.
+=============================================
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>APP de tareas por hacer</title>
+</head>
+
+<body>
+    <h1>Una APP de tareas<br>por hacer como lista</h1>
+    <!-- Caja de texto id="nuevaTarea": permite que app.js lo identifique con document.getElementById('nuevaTarea')
+     -->
+    <input type="text" id="nuevaTarea" placeholder="add new task">
+    <!-- Botón para agregar la tarea escrita en el input
+     id="btnAgregar": app.js conecta este botón con la función agregarTarea() mediante addEventListener -->
+    <button id="btnAgregar">Agrega tarea</button>
+
+    <h2>Tareas por hacer</h2>                   
+    <!-- Lista desordenada donde app.js agrega dinámicamente los elementos <li> de cada tarea pendiente.
+         Empieza vacía, app.js la llena con renderizar() -->
+    <ul id="listaPorHacer"></ul>
+
+    <!-- Botón para eliminar tareas pendientes seleccionadas
+         id="btnEliminarPorHacer": app.js conecta este botón con eliminarSeleccionadas(false), donde false
+           indica que elimina tareas NO realizadas -->
+    <button id="btnEliminarPorHacer">Eliminar</button>
+
+    <h2>Tareas realizadas</h2>
+
+    <!-- Lista desordenada donde app.js agrega dinámicamente los elementos <li> de cada tarea ya realizada.
+         Empieza vacía, app.js la llena con renderizar() -->
+    <ul id="listaRealizadas"></ul>
+
+    <!-- Botón para eliminar tareas realizadas seleccionadas
+     id="btnEliminarRealizadas": app.js conecta este botón con eliminarSeleccionadas(true), donde true
+           indica que elimina tareas SÍ realizadas -->
+    <button id="btnEliminarRealizadas">Eliminar</button>
+
+    <!-- Carga el archivo app.js que contiene toda la lógica.
+      -->
+    <script src="app.js"></script>
+
+</body>
+</html>
